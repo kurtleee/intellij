@@ -1,6 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 public class QuickSort {
     public void quickSort(int arr[], int begin, int end) {
         if (begin < end) {
