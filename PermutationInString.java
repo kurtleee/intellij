@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+// Driver code;
 public class PermutationInString {
     public static void main(String[] args) {
         String s1 = "aabb";
@@ -9,6 +10,15 @@ public class PermutationInString {
         PermutationInString o1 = new PermutationInString();
         System.out.print(o1.newSolutoin(s1, s2));
 
+        OK:
+        for (int i = 0; i < 100; ++i) {
+            for (int j = 0; j < 100; ++j) {
+                System.out.print(j);
+                if (j == 50) {
+                    break OK;
+                }
+            }
+        }
     }
 
 
