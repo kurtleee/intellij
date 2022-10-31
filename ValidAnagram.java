@@ -3,8 +3,8 @@ import java.util.Set;
 
 public class ValidAnagram {
     public static void main(String[] args){
-        String s = "jsaonbourne";
-        String t = "jasonbourne";
+        String s = "car";
+        String t = "tac";
         ValidAnagram o1  = new ValidAnagram();
         System.out.print(o1.isValid(s, t));
     }
