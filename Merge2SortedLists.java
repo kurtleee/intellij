@@ -7,10 +7,23 @@ Merge the two lists in a one sorted list. The list should be made by splicing to
 Return the head of the merged linked list.
 
 */
-public class Merge2SortedLists {
-    static class ListNode {
+/* Java program to merge two
+sorted linked lists */
+
+import java.util.*;
+
+/* Link list node */
+
+
+class Solution {
+
+    public class ListNode {
         int val;
         ListNode next;
+
+        ListNode() {
+        }
+
         ListNode(int val) {
             this.val = val;
         }
@@ -21,21 +34,59 @@ public class Merge2SortedLists {
         }
     }
 
-    public static void main(String[] args) {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode head;
 
+
+        // *****
+
+        ListNode dummyNode = new ListNode(0);
+
+        ListNode tail = dummyNode;
+
+        while (true) {
+            if (list1 == null) {
+                tail.next = list2;
+                break;
+            }
+
+            if (list2 == null) {
+                tail.next = list1;
+                break;
+            }
+
+            if (list1.val <= list2.val) {
+                tail.next = list1;
+                list1 = list1.next;
+            } else {
+                tail.next = list2;
+                list2 = list2.next;
+            }
+
+            tail = tail.next;
+        }
+
+        return dummyNode.next;
     }
 
-    public ListNode merge2Lists (ListNode l1, ListNode l2) {
-        if (l1 == null)  {
-            return l2;
-        } else if (l2 == null) {
-            return l1;
-        } else if (l1.val < l2.val) {
-            l1.next = merge2Lists(l1.next, l2);
-            return l1;
+
+    public ListNode mergeTwoListsUsingRecursion(ListNode list1, ListNode list2) {
+        if (list1 == null) {
+            return list2;
+        }
+
+        if (list2 == null) {
+            return list1;
+        }
+
+        if (list1.val <= list2.val) {
+            list1.next = mergeTwoListsUsingRecursion(list1.next, list2);
+            return list1;
         } else {
-            l2.next = merge2Lists(l1, l2.next);
-            return l2;
+            list2.next = mergeTwoListsUsingRecursion(list1, list2.next);
+            return list2;
         }
     }
 }
+
+
