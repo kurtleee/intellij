@@ -60,7 +60,7 @@ public class ReorderList {
         merge(head, head2);
     }
 
-    private static ListNode reverse(ListNode head) {
+    public static ListNode reverse(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
         while (curr != null) {
@@ -72,16 +72,26 @@ public class ReorderList {
         return prev;
     }
 
-        while (l1 != null) {
-            ListNode l1Temp = l1.next;
-            ListNode l2Temp = l2.next;
-            l1.next = l2;
-            if (l1Temp == null) {
-                break;
+    public static void merge(ListNode head1, ListNode head2) {
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+        int index = 0;
+        while (head1 != null && head2 != null) {
+            if (index % 2 == 0) {
+                curr.next = head1;
+                head1 = head1.next;
+            } else {
+                curr.next = head2;
+                head2 = head2.next;
             }
-            l2.next = l1Temp;
-            l1 = l1Temp;
-            l2 = l2Temp;
+            curr = curr.next;
+            index++;
         }
-    }
+        if (head1 != null) {
+            curr.next = head1;
+        }
+        if (head2 != null) {
+            curr.next = head2;
+        }
+    }        
 }
