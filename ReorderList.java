@@ -42,11 +42,11 @@ public class ReorderList {
             System.out.println(head.val);
             head = head.next;
         }
-    }  
+    }
 
     public static ListNode reorderList(ListNode head) {
         if (head == null || head.next == null) {
-            return;
+            return head;
         }
         ListNode slow = head;
         ListNode fast = head;
@@ -58,6 +58,7 @@ public class ReorderList {
         slow.next = null;
         head2 = reverse(head2);
         merge(head, head2);
+        return head;
     }
 
     public static ListNode reverse(ListNode head) {
@@ -93,5 +94,6 @@ public class ReorderList {
         if (head2 != null) {
             curr.next = head2;
         }
-    }        
+    }
+
 }
