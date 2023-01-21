@@ -4,7 +4,7 @@ public class TrappingWater {
         int[] arr = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
         int n = arr.length - 1;
         System.out.print(o1.bruteForceApproach(arr));
-        System.out.print(o1.optimizedApproach(arr, n));
+        // System.out.print(o1.optimizedApproach(arr, n));
     }
 
 //Approach 1 (Brute Approach): This approach is the brute approach. The idea is to:
