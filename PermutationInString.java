@@ -8,17 +8,41 @@ public class PermutationInString {
         String s1 = "aabb";
         String s2 = "aabbcc";
         PermutationInString o1 = new PermutationInString();
-        System.out.print(o1.newSolutoin(s1, s2));
+        System.out.println(o1.newSolutoin(s1, s2));
 
-        OK:
-        for (int i = 0; i < 100; ++i) {
-            for (int j = 0; j < 100; ++j) {
-                System.out.print(j);
-                if (j == 50) {
-                    break OK;
-                }
+        System.out.println(o1.finalSolution(s1, s2));
+
+
+    }
+
+    /*Created by @Kurt LEE On 1/21/23 5:29 AM.*/
+
+    public boolean finalSolution(String s1, String s2) {
+        if (s1.length() > s2.length()) {
+            return false;
+        }
+
+        int[] s1_freq = new int[26];
+        int[] win_freq = new int[26];
+
+        for (int i = 0; i < s1.length(); ++i) {
+            s1_freq[s1.charAt(i) - 'a']++;
+            win_freq[s2.charAt(i) - 'a']++;
+        }
+
+        for (int i = 0; i <= s2.length() - s1.length(); ++i) {
+            if (Arrays.equals(s1_freq, win_freq)) {
+                return true;
+            }
+
+            win_freq[s2.charAt(i)]--;
+
+            if (i + s1.length() < s2.length()) {
+                win_freq[s2.charAt(i + s1.length()) - 'a']++;
             }
         }
+
+        return false;
     }
 
 
