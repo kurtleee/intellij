@@ -7,7 +7,7 @@ public class JPGToBase64 {
         String imagePath = "/Downloads/DALL·E 2023-01-21 01.33.27.png"; // replace with the path to your image file
         try {
             FileInputStream imageInFile = new FileInputStream(imagePath);
-            byte[] imageData = new byte[(int) imageInFile.length()];
+            byte[] imageData = new byte[0];
             imageInFile.read(imageData);
             String imageDataString = Base64.getEncoder().encodeToString(imageData);
             System.out.println(imageDataString);
