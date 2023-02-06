@@ -1,14 +1,18 @@
+import java.util.PriorityQueue;
+
 public class TestClass {
     public static void main(String[] args) {
-        String s = "asd";
+        PriorityQueue<Integer> q = new PriorityQueue<>();
 
-        char[] a = s.toCharArray();
-        for (char c : a) {
-            System.out.println(c);
+        q.add(10);
+        q.add(1);
+        q.add(4);
+
+        System.out.printf("PQ" + q);
         }
     }
 
 
-}
+
 
 
