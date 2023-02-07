@@ -26,8 +26,8 @@ public class SurroundedRegions {
                 dfs(board, 0, i);
             }
 
-            if (board[n - 1][i] == '0') {
-                dfs(board, n - 1, i);
+            if (board[m - 1][i] == '0') {
+                dfs(board, m - 1, i);
             }
         }
 
