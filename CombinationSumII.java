@@ -3,6 +3,15 @@ import java.util.*;
 import java.util.List;
 
 public class CombinationSumII {
+
+
+    public static void main(String[] args) {
+        CombinationSumII o1 = new CombinationSumII();
+        int[] candidates = {1,2,3,4,5,5};
+        int target = 10;
+        System.out.println(o1.combinationSum2(candidates, target));;
+    }
+
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates); // sort the array to optimize backtracking
         List<List<Integer>> res = new ArrayList<>();
